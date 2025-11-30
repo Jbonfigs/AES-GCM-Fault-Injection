@@ -1,0 +1,32 @@
+{
+    "binary filename" : "demos/aes-gcm-arm/aes_gcm_simple.bin",
+    "cpu":"MAX",
+    "unicorn arch"    :"arm",
+    "unicorn mode"    :"LITTLE ENDIAN",
+    "capstone arch"   :"arm",
+    "capstone mode"   :"LITTLE_ENDIAN",
+    "memory address"  :"0x8000",
+    "memory size"     :"0x10000",
+    "stack address" : "0x30000",
+    "stack size"    : "0x1000",
+    "code offset"   : "0x0",
+    "code start"    : "0x3d4",
+    "code end"      : "0x500",
+    "fault start"   : "0x104",
+    "fault end"     : "0x3d3",
+    "set memory"    : [],
+    "set registers" : [],
+    "outputs"    : 
+    [
+        {   
+            "location"      : "register",
+            "address"       : "",
+            "register"      : "r0",
+            "length"        : "16",
+            "offset"        : ""
+        }
+    ],
+    "skips": [],
+    "timeout":"0",
+    "filter results": "no"
+}

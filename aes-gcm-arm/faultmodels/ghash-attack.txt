@@ -1,0 +1,16 @@
+# Target GHASH computation - gf128_mul and ghash functions
+# Instructions from gf128_mul start (0x104) to end of ghash (0x3d3)
+Instructions: 1-81900
+
+# Fault registers during GF(2^128) multiplication
+Registers: r0, r1, r2, r3, r4, r5, r6, r7
+Op_codes: ALL
+Lifespan: 0
+Operations: XOR
+Masks: 1<<0<<32
+
+# Also try instruction skips on branches
+Instruction:
+Op_codes: beq, bne, blo, bhi
+Lifespan: 0
+Operations: SKIP

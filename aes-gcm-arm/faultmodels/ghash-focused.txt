@@ -1,0 +1,10 @@
+# Focus on the core gf128_mul function only
+# This is where the Galois field multiplication happens
+Instructions: 1-5000
+
+# Target key registers during multiplication
+Registers: r0, r1, r2, r3
+Op_codes: ALL
+Lifespan: 0
+Operations: XOR
+Masks: 1<<0<<8

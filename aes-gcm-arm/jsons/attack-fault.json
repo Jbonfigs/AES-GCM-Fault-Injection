@@ -1,0 +1,14 @@
+{
+    "binary json filename"  : "demos/aes-gcm-arm/jsons/attack-binary-details.json",
+    "mode"                  : "fault",
+    "output directory name" : "demos/aes-gcm-arm/attack-outputs",
+    "threads"               : "8",
+    "fault model filename"  : "demos/aes-gcm-arm/faultmodels/forgery-attack.txt",
+    "checkpoints"           : "yes",
+    "number of checkpoints" : "5",
+    "equivalents"           : "yes",
+    "timeit"                : "yes",
+    "display disassembly"   : "no",
+    "max instructions"      : "200000",
+    "stop on equivalence"   : "no"
+}

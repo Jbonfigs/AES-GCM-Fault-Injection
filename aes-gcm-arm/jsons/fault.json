@@ -1,0 +1,14 @@
+{
+    "binary json filename"  : "demos/aes-gcm-arm/jsons/binary-details.json",
+    "mode"                  : "fault",
+    "output directory name" : "demos/aes-gcm-arm/outputs",
+    "threads"               : "8",
+    "fault model filename"  : "demos/aes-gcm-arm/faultmodels/ghash-focused.txt",
+    "checkpoints"           : "yes",
+    "number of checkpoints" : "5",
+    "equivalents"           : "yes",
+    "timeit"                : "yes",
+    "display disassembly"   : "no",
+    "max instructions"      : "100000",
+    "stop on equivalence"   : "no"
+}
