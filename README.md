@@ -1,6 +1,6 @@
 # AES-GCM Fault Injection Attack Demonstration
 
-**Course Project**: EECE7352 - Digital Computer Architecture  
+**Course Project**: EECE7352 - Computer Architecture  
 **Author**: Jack Bonfiglio  
 **Institution**: Northeastern University  
 **Date**: December 2025
