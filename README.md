@@ -9,18 +9,36 @@
 
 This project demonstrates practical fault injection attacks on AES-GCM authenticated encryption using the FaultFinder simulation framework. We show that physical fault injection can bypass cryptographic authentication, allowing message forgery with a 24% success rate.
 
-## Key Results
+## What This Demonstrates
 
-- **7.4%** of faults produce exploitable authentication corruption
-- **24%** success rate in forging modified banking transactions
-- **14,161** successful forgeries out of 58,656 fault attempts
-- Demonstrated on ARM 32-bit architecture
+### Security Vulnerability
+
+AES-GCM is used in TLS 1.3 and IPsec. This project shows:
+- GHASH authentication can be bypassed with fault injection
+- ~1 in 4 faults allows message forgery
+- Physical security is critical for cryptographic systems
+
+### Attack Scenario
+
+**Original Message**: "Transfer $100"  
+**Modified Message**: "Transfer $999"  
+
+Without faults: Attack detected  
+With faults: 24% success rate
+
+## Technologies Used
+
+- **FaultFinder**: Multi-architecture fault injection simulator
+- **Unicorn Engine**: CPU emulation framework
+- **ARM GCC**: Cross-compilation toolchain
+- **Python/Matplotlib**: Data visualization
 
 ## Project Structure
 ```
 ├── README.md                          # This file
 ├── docs/
 │   ├── ATTACK_DEMONSTRATION.md       # Attack scenario walkthrough
+│   ├── EECE7352-Final-Project-Report.pdf       # Complete technical analyis
 │   └── *.png                         # Visualizations
 ├── src/
 │   ├── aes_gcm_simple.c             # GHASH implementation
@@ -90,33 +108,8 @@ python3 create_attack_visualization.py
 
 ## Documentation
 
-- [**Final Report**](docs/FINAL_REPORT.md) - Complete technical analysis (14 pages)
+- [**Final Report**](docs/EECE7352-Final-Project-Report.pdf) - Complete technical analysis
 - [**Attack Demo**](docs/ATTACK_DEMONSTRATION.md) - Step-by-step attack walkthrough
-- [**Quick Demo**](docs/DEMONSTRATION.md) - Fast introduction
-
-## What This Demonstrates
-
-### Security Vulnerability
-
-AES-GCM is used in TLS 1.3 and IPsec. This project shows:
-- GHASH authentication can be bypassed with fault injection
-- ~1 in 4 faults allows message forgery
-- Physical security is critical for cryptographic systems
-
-### Attack Scenario
-
-**Original Message**: "Transfer $100"  
-**Modified Message**: "Transfer $999"  
-
-Without faults: Attack detected  
-With faults: 24% success rate
-
-## Technologies Used
-
-- **FaultFinder**: Multi-architecture fault injection simulator
-- **Unicorn Engine**: CPU emulation framework
-- **ARM GCC**: Cross-compilation toolchain
-- **Python/Matplotlib**: Data visualization
 
 ## Building from Source
 ```bash
@@ -134,6 +127,13 @@ arm-linux-gnueabi-gcc -nostdlib -nostartfiles -static -O0 -g \
   aes_gcm_attack_demo.c -o aes_gcm_attack_demo.elf -T link.ld
 arm-linux-gnueabi-objcopy -O binary aes_gcm_attack_demo.elf aes_gcm_attack_demo.bin
 ```
+
+## Key Results
+
+- **7.4%** of faults produce exploitable authentication corruption
+- **24%** success rate in forging modified banking transactions
+- **14,161** successful forgeries out of 58,656 fault attempts
+- Demonstrated on ARM 32-bit architecture
 
 ## References
 
