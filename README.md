@@ -66,10 +66,29 @@ git clone https://github.com/fault-finder/fault-finder.git
 cd fault-finder
 
 # Install dependencies (Ubuntu/Debian)
-sudo apt-get install libjson-c-dev pkg-config
+sudo apt-get update
+sudo apt-get install -y \
+    libjson-c-dev \
+    libcapstone-dev \
+    pkg-config \
+    build-essential \
+    git \
+    cmake
 
-# Install Capstone and Unicorn (see FaultFinder README)
+# Build Unicorn 2.1.1 from source
+cd ~ 
+git clone https://github.com/unicorn-engine/unicorn.git
+cd unicorn
+git checkout 2.1.1
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j$(nproc)
+sudo make install
+sudo ldconfig    
+
 # Then build
+cd ~/fault-finder
 make faultfinder
 ```
 
